@@ -15,7 +15,8 @@ function App() {
     {user && <Nav/>}
     <Routes>
       <Route path='/signup' element={<Signup/>}/>
-      <Route path='/login' element={<Login/>}/>
+      <Route exact path='/login' element={<Login/>}/>
+      {!user && <Route path="*" element={<Navigate replace to="/login" />} />}
 
       {user && <Route>
           <Route path='/home' element={<HomePage/>}/>
