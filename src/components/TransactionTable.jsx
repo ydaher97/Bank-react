@@ -10,7 +10,7 @@ const TransactionTable = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/transaction/${user._id}`);
+        const response = await axios.get(`https://bank-backend-mongo.onrender.com/api/transaction/${user._id}`);
         setTransactions(response.data.transactions);
       } catch (error) {
         console.error('Error fetching transactions:', error);

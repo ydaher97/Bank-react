@@ -21,7 +21,7 @@ const Signup = () => {
 
   const handleCreateUser = async() => {
     try {
-        const response = await axios.post('http://localhost:8080/api/users', signup);
+        const response = await axios.post('https://bank-backend-mongo.onrender.com/api/users', signup);
   
         if (response.status === 200 || response.status === 201) {
           console.log('User created successfully');

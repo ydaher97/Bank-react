@@ -7,7 +7,7 @@ const WithdrawalForm = ({ userID }) => {
 
   const handleWithdrawal = async () => {
     try {
-      const response = await axios.put(`http://localhost:8080/api/users/withdraw`, {userID, amount });
+      const response = await axios.put(`https://bank-backend-mongo.onrender.com/api/users/withdraw`, {userID, amount });
 
       if (response.status === 200) {
         console.log('Withdrawal successful');

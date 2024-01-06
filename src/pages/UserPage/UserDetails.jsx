@@ -13,7 +13,7 @@ const UserDetails = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/users/${id}`);
+        const response = await axios.get(`https://bank-backend-mongo.onrender.com/api/users/${id}`);
 
         if (response.status === 200) {
           setUserData(response.data.user);
@@ -26,16 +26,16 @@ const UserDetails = () => {
     };
 
     fetchUserDetails();
-  }, [id,userData]);
+  }, [id, userData]);
 
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
-        <Paper elevation={3}  style={{ padding: '20px' }}>
+        <Paper elevation={3} style={{ padding: '20px', marginTop: '20px' }}>
           {userData && (
             <>
               <Typography variant="h5" gutterBottom>
-                User Details
+                {userData.name}
               </Typography>
               <Typography variant="subtitle1" gutterBottom>
                 Cash: {userData.cash}

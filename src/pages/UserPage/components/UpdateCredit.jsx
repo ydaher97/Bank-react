@@ -7,7 +7,7 @@ const UpdateCreditForm = ({ userID }) => {
 
   const handleUpdateCredit = async () => {
     try {
-      const response = await axios.put(`http://localhost:8080/api/users/update-credit`, {userID, creditAmount });
+      const response = await axios.put(`https://bank-backend-mongo.onrender.com/api/users/update-credit`, {userID, creditAmount });
 
       if (response.status === 200) {
         console.log('Credit updated successfully');

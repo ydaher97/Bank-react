@@ -2,6 +2,7 @@ import React ,{useState, useEffect}from 'react'
 import CreateUserForm from '../../components/CreateUserForm'
 import UserTable from '../../components/UserTable'
 import axios from 'axios';
+import Title from '../../components/Title';
 
 const HomePage = () => {
 
@@ -10,7 +11,7 @@ const HomePage = () => {
     useEffect(() => {
       const fetchUsers = async () => {
         try {
-          const response = await axios.get('http://localhost:8080/api/users');
+          const response = await axios.get('https://bank-backend-mongo.onrender.com/api/users');
           if (response.status === 200) {
             setUsers(response.data); 
           } else {
@@ -26,7 +27,7 @@ const HomePage = () => {
 
   return (
     <>
-        <div>HomePage</div>
+        <Title text="Home"/>
         <div>
             { users && <UserTable users={users}/>}
         </div>

@@ -1,10 +1,11 @@
 import React from 'react'
 import TransactionTable from '../../components/TransactionTable'
+import Title from '../../components/Title'
 
 const Transactions = () => {
   return (
     <>
-    <div>Transactions</div>
+    <Title text="Transactions"/>
     <TransactionTable/>
     </>
   )

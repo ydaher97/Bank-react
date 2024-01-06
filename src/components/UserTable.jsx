@@ -14,7 +14,7 @@ const UserTable = ({ users }) => {
   const handleTransfer = async (fromID, toID) => {
     console.log(fromID,toID,transferAmount)
     try {
-      const response = await axios.put('http://localhost:8080/api/users/transfer', {
+      const response = await axios.put('https://bank-backend-mongo.onrender.com/api/users/transfer', {
         fromID,
         toID,
         amount: transferAmount,

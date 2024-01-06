@@ -20,13 +20,14 @@ const Login = () => {
   
     const handleLogin = async() => {
       try {
-          const response = await axios.post('http://localhost:8080/api/users/login', login);
+          const response = await axios.post('https://bank-backend-mongo.onrender.com/api/users/login', login);
         const result = response.data.user
         console.log(result)
           if (response.status === 200 || response.status === 201) {
             console.log('User created successfully');
             localStorage.setItem('user', JSON.stringify(result));
-            navigate('/home')
+            // navigate('/home')
+            window.location = "/home"
           } else {
             console.error('Failed to create user');
           }
